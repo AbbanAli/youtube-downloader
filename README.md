@@ -7,7 +7,7 @@ This tool is for **educational purposes only**. You are responsible for complyin
 A clean, modern YouTube downloader with both GUI and CLI interfaces. Built by a 15-year-old developer learning Python.
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## ✨ Features
 
