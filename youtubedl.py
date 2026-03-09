@@ -3,7 +3,16 @@
 # YOUTUBE DOWNLOADER - Auto Best Quality
 # Shows available formats, picks best without FFmpeg
 # ============================================
+"""
+YouTube Downloader - by Abban Ali
+GitHub: github.com/AbbanAli
 
+DISCLAIMER:
+This software is for educational purposes only. 
+The author is not responsible for any misuse.
+Respect copyright laws and YouTube's Terms of Service.
+Only download content you own or have permission to use.
+"""
 import os
 import sys
 import subprocess
@@ -25,7 +34,6 @@ class YouTubeDownloader:
         self.download_path.mkdir(parents=True, exist_ok=True)
     
     def check_available_formats(self, url):
-        """Check what qualities are available without FFmpeg"""
         ydl_opts = {
             'quiet': True,
             'no_warnings': True,
@@ -34,11 +42,10 @@ class YouTubeDownloader:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=False)
             formats = info.get('formats', [])
-            
-            # Find pre-merged formats (video+audio together, no FFmpeg needed)
+
             premerged = []
             for f in formats:
-                # Has both video and audio codec
+ 
                 if f.get('vcodec') != 'none' and f.get('acodec') != 'none':
                     height = f.get('height', 0)
                     if height > 0:
@@ -48,10 +55,10 @@ class YouTubeDownloader:
                             'ext': f.get('ext', 'mp4')
                         })
             
-            # Sort by height descending
+
             premerged.sort(key=lambda x: x['height'], reverse=True)
             
-            # Get unique heights
+     
             seen = set()
             unique = []
             for f in premerged:
@@ -62,19 +69,16 @@ class YouTubeDownloader:
             return unique, info.get('title', 'Unknown')
     
     def get_best_format(self, url, preferred_height):
-        """Get best available format at or below preferred height"""
         available, title = self.check_available_formats(url)
         
         if not available:
             return 'best', "360p (only option)"
         
-        # Find best format at or below preferred height
         for fmt in available:
             if fmt['height'] <= preferred_height:
-                # Use format_id for exact match
+
                 return fmt['format_id'], f"{fmt['height']}p"
         
-        # If nothing matches, return lowest available
         lowest = available[-1]
         return lowest['format_id'], f"{lowest['height']}p (best available)"
     
@@ -100,7 +104,6 @@ class YouTubeDownloader:
             })
             actual_quality = "MP3 192kbps"
         else:
-            # Get best available format at preferred quality
             format_id, actual_quality = self.get_best_format(url, preferred_quality)
             ydl_opts['format'] = format_id
         
@@ -141,7 +144,6 @@ class GUI:
         main = tk.Frame(self.root, bg=self.colors['bg'])
         main.pack(fill='both', expand=True, padx=20, pady=15)
         
-        # Header
         header = tk.Frame(main, bg=self.colors['surface'], height=50)
         header.pack(fill='x', pady=(0, 10))
         header.pack_propagate(False)
@@ -154,7 +156,6 @@ class GUI:
             fg=self.colors['blue']
         ).pack(side='left', padx=15, pady=10)
         
-        # URL
         url_frame = tk.Frame(main, bg=self.colors['bg'])
         url_frame.pack(fill='x', pady=8)
         
@@ -176,7 +177,6 @@ class GUI:
         )
         self.url_entry.pack(fill='x', pady=5, ipady=6)
         
-        # Buttons row
         btn_row = tk.Frame(url_frame, bg=self.colors['bg'])
         btn_row.pack(fill='x', pady=5)
         
@@ -205,7 +205,6 @@ class GUI:
             font=('JetBrains Mono', 9)
         ).pack(side='left', padx=5)
         
-        # Available formats display
         self.formats_frame = tk.Frame(main, bg=self.colors['surface'], padx=10, pady=10)
         self.formats_label = tk.Label(
             self.formats_frame,
@@ -218,7 +217,6 @@ class GUI:
         )
         self.formats_label.pack(anchor='w')
         
-        # Format selection
         fmt_frame = tk.Frame(main, bg=self.colors['bg'])
         fmt_frame.pack(fill='x', pady=8)
         
@@ -259,7 +257,6 @@ class GUI:
             command=self.toggle_quality
         ).pack(side='left', padx=20)
         
-        # Quality selection
         self.quality_frame = tk.Frame(main, bg=self.colors['bg'])
         self.quality_frame.pack(fill='x', pady=8)
         
@@ -290,7 +287,6 @@ class GUI:
             fg=self.colors['yellow']
         ).pack(anchor='w')
         
-        # Location
         loc_frame = tk.Frame(main, bg=self.colors['bg'])
         loc_frame.pack(fill='x', pady=8)
         
@@ -329,7 +325,6 @@ class GUI:
             font=('JetBrains Mono', 9)
         ).pack(side='right', padx=5)
         
-        # Progress
         self.progress_frame = tk.Frame(main, bg=self.colors['bg'])
         
         self.progress_var = tk.DoubleVar()
@@ -349,11 +344,9 @@ class GUI:
         )
         self.status_label.pack(anchor='w')
         
-        # Spacer
         spacer = tk.Frame(main, bg=self.colors['bg'])
         spacer.pack(fill='both', expand=True)
         
-        # Download button
         self.download_btn = tk.Button(
             main,
             text="⬇️  START DOWNLOAD",
@@ -368,7 +361,6 @@ class GUI:
         )
         self.download_btn.pack(fill='x', pady=15)
         
-        # Footer
         tk.Label(
             main,
             text="by Abban Ali • github.com/AbbanAli",
@@ -378,7 +370,6 @@ class GUI:
         ).pack(side='bottom', pady=5)
     
     def check_formats(self):
-        """Check what formats are available for this URL"""
         url = self.url_entry.get().strip()
         
         if not url or ('youtube' not in url and 'youtu.be' not in url):
@@ -508,4 +499,5 @@ class GUI:
 
 
 if __name__ == "__main__":
+
     GUI().run()
