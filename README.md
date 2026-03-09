@@ -10,7 +10,7 @@ This tool is for **educational purposes only**. You are responsible for complyin
 
 ## ✨ Features
 
-- 🎨 **Modern GUI** - Clean dark theme with real-time progress
+- 🎨 **Modern GUI** - Clean dark-blue theme with real-time progress
 - 🎬 **Video Download** - MP4 in multiple qualities (360p to 1080p) (wip, 360p is only working for now)
 - 🎵 **Audio Extraction** - MP3 format (works without FFmpeg!)
 - 🔍 **Smart Quality Check** - See available formats before downloading
