@@ -2,12 +2,11 @@
 
 This tool is for **educational purposes only**. You are responsible for complying with YouTube's Terms of Service and copyright laws. Only download content you own or have permission to use.
 
-#🎬 YouTube Downloader
+# 🎬 YouTube Downloader
 
-A clean, modern YouTube downloader with both GUI and CLI interfaces. Built by a 15-year-old developer learning Python.
-
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Mac%20%7C%20Linux-lightgrey.svg)](https://github.com/AbbanAli/youtube-downloader)
 
 ## ✨ Features
 
