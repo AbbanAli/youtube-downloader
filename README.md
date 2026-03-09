@@ -12,11 +12,10 @@ A clean, modern YouTube downloader with both GUI and CLI interfaces. Built by a 
 ## ✨ Features
 
 - 🎨 **Modern GUI** - Clean dark theme with real-time progress
-- 🎬 **Video Download** - MP4 in multiple qualities (360p to 1080p)
+- 🎬 **Video Download** - MP4 in multiple qualities (360p to 1080p) (wip, 360p is only working for now)
 - 🎵 **Audio Extraction** - MP3 format (works without FFmpeg!)
 - 🔍 **Smart Quality Check** - See available formats before downloading
 - 📋 **One-Click Paste** - Auto-paste from clipboard
-- 🖥️ **CLI Mode** - Command line interface for scripts
 
 ## 📋 Requirements
 - Python 3.8+
