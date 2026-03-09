@@ -1,3 +1,7 @@
+## ⚠️ Disclaimer
+
+This tool is for **educational purposes only**. You are responsible for complying with YouTube's Terms of Service and copyright laws. Only download content you own or have permission to use.
+
 #🎬 YouTube Downloader
 
 A clean, modern YouTube downloader with both GUI and CLI interfaces. Built by a 15-year-old developer learning Python.
@@ -14,6 +18,16 @@ A clean, modern YouTube downloader with both GUI and CLI interfaces. Built by a 
 - 📋 **One-Click Paste** - Auto-paste from clipboard
 - 🖥️ **CLI Mode** - Command line interface for scripts
 
+## 📋 Requirements
+- Python 3.8+
+- yt-dlp (auto-installs if missing)
+- FFmpeg (optional, for 1080p+ video)
+
+## 🛠️ Tech Stack
+Python • tkinter • yt-dlp • threading
+
+
+
 ## 🚀 Quick Start
 
 ```bash
@@ -25,3 +39,5 @@ python youtube_downloader.py
 
 # Or CLI
 python youtube_downloader.py "https://youtube.com/watch?v=..."
+
+
