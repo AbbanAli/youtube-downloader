@@ -5,7 +5,6 @@ This tool is for **educational purposes only**. You are responsible for complyin
 # 🎬 YouTube Downloader
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Mac%20%7C%20Linux-lightgrey.svg)](https://github.com/AbbanAli/youtube-downloader)
 
 ## ✨ Features
