@@ -9,9 +9,8 @@ This tool is for **educational purposes only**. You are responsible for complyin
 
 ## ✨ Features
 
-- 🎨 **Modern GUI** - Clean dark-blue theme with real-time progress
-- 🎬 **Video Download** - MP4 in multiple qualities (360p to 1080p) (wip, 360p is only working for now)
-- 🎵 **Audio Extraction** - MP3 format (works without FFmpeg!)
+- 🎬 **Video Download** - MP4 in only 360p (wip)
+- 🎵 **Audio Extraction** - MP3 format
 - 🔍 **Smart Quality Check** - See available formats before downloading
 - 📋 **One-Click Paste** - Auto-paste from clipboard
 
