@@ -17,7 +17,7 @@ This tool is for **educational purposes only**. You are responsible for complyin
 ## 📋 Requirements
 - Python 3.8+
 - yt-dlp (auto-installs if missing)
-- FFmpeg (optional, for 1080p+ video)
+- FFmpeg (optional)
 
 ## 🛠️ Tech Stack
 Python • tkinter • yt-dlp • threading
